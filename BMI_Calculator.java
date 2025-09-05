@@ -1,14 +1,14 @@
-import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class BMI_Calculator {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc= new Scanner(System.in);
         
         while (true) {
             try {
                 System.out.print("Enter your weight in pounds: ");
-                float weight = scanner.nextFloat();
+                float weight = sc.nextFloat();
 
                 if (weight <= 0) {
                     System.out.println("Weight must be greater than zero. Please try again.");
@@ -16,7 +16,7 @@ public class BMI_Calculator {
                 }
 
                 System.out.print("Enter your height in inches: ");
-                float height = scanner.nextFloat();
+                float height = sc.nextFloat();
 
                 if (height <= 0) {
                     System.out.println("Height must be greater than zero. Please try again.");
@@ -52,12 +52,12 @@ public class BMI_Calculator {
 
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter numeric values.");
-                scanner.next(); // Consume the invalid input
+                sc.next(); // Consume the invalid input
                 continue;
             }
 
             System.out.print("Do you want to calculate another BMI? (yes/no): ");
-            String response = scanner.next();
+            String response = sc.next();
             if (!response.equalsIgnoreCase("yes")) {
                 break;
             }
